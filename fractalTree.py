@@ -1,15 +1,19 @@
 import turtle
+import random
 
 def tree(branchLen,t):
+    # To generate random angle
+    angle=random.randint(15,45)
+    print(angle)
     if branchLen>5:
         #t.width(branchLen)
         t.forward(branchLen)
-        t.right(20)
+        t.right(angle)
         tree(branchLen-15,t)
-        t.left(40)
+        t.left(angle*2)
         tree(branchLen-15,t)
         # t.width(branchLen-10)
-        t.right(20)
+        t.right(angle)
         # To ensure that leaf node stays green and rest of the tree stays brown
         if branchLen!=15:
             t.color('brown')
